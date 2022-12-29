@@ -24,12 +24,14 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Nest application for practicing queueing with Bull and Redis.
 
 ## Installation
 
 ```bash
 $ npm install
+or
+$ yarn install
 ```
 
 ## Running the app
@@ -58,16 +60,63 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Environment Variables
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+# .env
+PG_USER
+PG_PASSWORD
+PG_HOST
+PG_PORT
+PG_DATABASE
+```
 
-## Stay in touch
+## Routes
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+# GET
+http://localhost:3000/
+# Gets hello world
 
-## License
+# GET
+http://localhost:3000/invoke-msg?msg=Hello World
+# Invokes a message to be queued
 
-Nest is [MIT licensed](LICENSE).
+# GET
+http://localhost:3000/cron-job
+# Gets all cron jobs
+
+# POST
+http://localhost:3000/cron-job
+@ Body
+{
+  "name": "test",
+  "cron": "*/5 * * * * *",
+  "data": {
+    "msg": "Hello World"
+  }
+}
+# Creates a cron job
+
+# PUT
+http://localhost:3000/cron-job
+@ Body
+{
+  "name": "test",
+  "cron": "*/5 * * * * *",
+  "data": {
+    "msg": "Hello World"
+  }
+  "key": "mycronjobkey"
+}
+# Updates a cron job
+
+# DELETE
+http://localhost:3000/cron-job
+@ Body
+{
+  "key": "mycronjobkey"
+}
+# Deletes a cron job
+```
+
