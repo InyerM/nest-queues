@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "d58d48cc-69f6-495d-b160-907b7f4062e2",
+		"name": "Workers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25082913"
+	},
+	"item": [
+		{
+			"name": "AddCronJob",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"holaa\",\r\n    \"cron\": \"*/1 * * * * \",\r\n    \"name\": \"cron-message-job\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/cron-job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cron-job"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AddCronJob",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"holaa\",\r\n    \"cron\": \"*/1 * * * * \",\r\n    \"name\": \"cron-message-job\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cron-job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cron-job"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-Ai2R8hgEarLmHKwesT1qcY913ys\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 Dec 2022 21:17:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ok\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "EditCronJob",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"key\": \"cron-message-job:::America/Los_Angeles:*/1 * * * * \",\r\n    \"data\": \"holaa editado a 2 mins\",\r\n    \"cron\": \"*/2 * * * * \",\r\n    \"name\": \"cron-message-job\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/cron-job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cron-job"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EditCronJob",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"cron-message-job:::America/Los_Angeles:*/1 * * * * \",\r\n    \"data\": \"holaa editado a 2 mins\",\r\n    \"cron\": \"*/2 * * * * \",\r\n    \"name\": \"cron-message-job\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/cron-job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cron-job"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-Ai2R8hgEarLmHKwesT1qcY913ys\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 Dec 2022 21:18:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ok\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "RemoveCronJob",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cron-job?key=cron-message-job:::America/Los_Angeles:*/1 * * * * ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cron-job"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "cron-message-job:::America/Los_Angeles:*/1 * * * * "
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "RemoveCronJob",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cron-job?key=cron-message-job:::America/Los_Angeles:*/1 * * * * ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cron-job"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "cron-message-job:::America/Los_Angeles:*/1 * * * * "
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-Ai2R8hgEarLmHKwesT1qcY913ys\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 Dec 2022 21:19:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ok\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "GetCronJobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cron-job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cron-job"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetCronJobs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cron-job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cron-job"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "197"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c5-7FRu9MoWFaMPhyfFNL0bdfLVDVE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 Dec 2022 21:17:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"key\": \"cron-message-job:::America/Los_Angeles:*/1 * * * * \",\n        \"name\": \"cron-message-job\",\n        \"id\": null,\n        \"endDate\": null,\n        \"tz\": \"America/Los_Angeles\",\n        \"cron\": \"*/1 * * * * \",\n        \"every\": null,\n        \"next\": 1672348680000\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "InvokeMsg",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/invoke-msg?msg=Hello World",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"invoke-msg"
+					],
+					"query": [
+						{
+							"key": "msg",
+							"value": "Hello World"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "InvokeMsg",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/invoke-msg?msg=Hello World",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"invoke-msg"
+							],
+							"query": [
+								{
+									"key": "msg",
+									"value": "Hello World"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-Ck1VqNd45QIvq3AZd8XYQLvEhtA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 Dec 2022 21:19:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Hello World"
+				}
+			]
+		},
+		{
+			"name": "DeleteAllCronJob",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cron-job/remove-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cron-job",
+						"remove-all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteAllCronJob",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cron-job/remove-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cron-job",
+								"remove-all"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-Ai2R8hgEarLmHKwesT1qcY913ys\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 29 Dec 2022 21:19:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ok\": true\n}"
+				}
+			]
+		}
+	]
+}

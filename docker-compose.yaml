@@ -1,0 +1,31 @@
+version: "3.6"
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - DATABASE_HOST=localhost
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:6543"
+    volumes:
+      - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+      - ./postgres:/var/lib/postgresql/data
+  redis:
+    image: redis
+    container_name: redis-server
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 6379:6379
+
+  redis-commander:
+    container_name: redis-commander
+    image: rediscommander/redis-commander
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
